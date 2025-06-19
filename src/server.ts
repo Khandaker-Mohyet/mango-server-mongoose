@@ -1,0 +1,34 @@
+import express from "express"
+import cors from "cors"
+import config from "./config"
+import mongoose from "mongoose"
+
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+
+app.get("/",(req,res)=>{
+    res.send({success: true, message:"Khandaker Mohyet Work station"})
+})
+
+
+
+app.listen(config.port,()=>{
+    console.log(`Khandakers Server Running successfully`)
+})
+
+
+async function server(){
+    try {
+        
+        await mongoose.connect(config.database_url!)
+
+        console.log(`mongoose connected on port ${5000}`)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+server()
