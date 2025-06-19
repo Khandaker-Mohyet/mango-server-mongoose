@@ -20,7 +20,7 @@ const userSchema = new Schema<IUser>({
     },
     phone: {
         type: String,
-        required: true
+        required: [true, "Your Phone Number is not valid"]
     },
     password: {
         type: String,
@@ -28,7 +28,9 @@ const userSchema = new Schema<IUser>({
     },
     role: {
         type: String,
-        enum: ["Admin", "Customer"],
+        enum: {values: ["Admin", "Customer"],
+            message: "{VALUE } is not acceptable"
+        },
         required: true
     }
 })

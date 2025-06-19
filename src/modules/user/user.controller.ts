@@ -15,3 +15,14 @@ export const createUser = async(req:Request, res: Response) =>{
         data
     })
 }
+
+export const getUser = async(req:Request, res: Response) =>{
+    
+    const data = await User.find()
+
+    res.send({
+        success : true,
+        message: "User get Successfully",
+        data
+    })
+}
