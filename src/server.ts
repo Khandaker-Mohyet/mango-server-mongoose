@@ -2,11 +2,14 @@ import express from "express"
 import cors from "cors"
 import config from "./config"
 import mongoose from "mongoose"
+import { userRouter } from "./modules/user/user.route"
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
+
+app.use(userRouter)
 
 
 app.get("/",(req,res)=>{
