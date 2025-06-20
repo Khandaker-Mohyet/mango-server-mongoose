@@ -4,9 +4,9 @@ import Mango from "./mango.model";
 
 export const createMango = async(req:Request, res: Response) =>{
     const body = req.body;
-    const user = new Mango(body)
+    const mango = new Mango(body)
 
-    const data = await user.save()
+    const data = await mango.save()
 
     res.send({
         success : true,
