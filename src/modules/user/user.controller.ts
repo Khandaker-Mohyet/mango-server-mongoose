@@ -4,6 +4,8 @@ import User from "./user.model";
 
 
 export const createUser = async(req:Request, res: Response) =>{
+    
+    // instance method
     const body = req.body;
     const user = new User(body)
 

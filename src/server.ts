@@ -4,6 +4,7 @@ import config from "./config"
 import mongoose from "mongoose"
 import { userRouter } from "./modules/user/user.route"
 import { mangoRouter } from "./modules/mango/mango.route"
+import { orderRouter } from "./modules/order/order.route"
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.use(express.json())
 
 app.use(userRouter)
 app.use(mangoRouter)
+app.use(orderRouter)
 
 
 app.get("/",(req,res)=>{
